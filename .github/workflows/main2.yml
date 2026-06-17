@@ -1,5 +1,5 @@
-name: My First Workflow with id ${{ github.run_id }}
-run-name: Workflow run by ${{ github.actor }} & Workflow number is ${{ github.run_number }}
+name: My Second Workflow
+run-name: Run-${{ github.run_id }} by ${{ github.actor }}
 on: 
   push: 
     branches:
@@ -13,11 +13,13 @@ jobs:
       - name: My First step
         run: |
           echo "My First Job Run Successful"
+          echo "Run Id: ${{ github.run_id }}"
+          echo "Run Number: ${{ github.run_number }}
           echo "My application name is ${{ vars.app_name }} run in ${{ vars.environment }} & run By ${{ vars.team }}"
-  # My_Second_Job:
-  #   name: My Second Job 
-  #   runs-on: ubuntu-latest
-  #   needs: My_First_Job
-  #   steps:
-  #     - name: My Second Job
-  #       run: echo "My Second Job Run Successful"
+  My_Second_Job:
+    name: My Second Job 
+    runs-on: ubuntu-latest
+    needs: My_First_Job
+    steps:
+      - name: My Second Job
+        run: echo "My Second Job Run Successful"
