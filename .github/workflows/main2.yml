@@ -8,10 +8,11 @@ on:
 jobs: 
   My_First_Job:
     name: My First Job
-    continue-on-error: true
+    # continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: My First step
+        continue-on-error: true
         run: |
           echo "My First Job Run Successful"
           echo "Run Id: ${{ github.run_id }}"
