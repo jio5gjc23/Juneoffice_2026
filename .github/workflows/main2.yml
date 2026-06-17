@@ -8,6 +8,7 @@ on:
 jobs: 
   My_First_Job:
     name: My First Job
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: My First step
