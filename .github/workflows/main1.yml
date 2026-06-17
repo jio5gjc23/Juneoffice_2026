@@ -8,7 +8,7 @@ on:
 jobs: 
   My_First_Job:
     name: My First Job
-    runs-on: ubuntu-latets
+    runs-on: ubuntu-latest
     steps:
       - name: My First step
         run: echo "My First Job Run Successful"
