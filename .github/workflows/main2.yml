@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "My First Job Run Successful"
           echo "Run Id: ${{ github.run_id }}"
-          echo "Run Number: ${{ github.run_number }}
+          echo "Run Number: ${{ github.run_number }}"
           echo "My application name is ${{ vars.app_name }} run in ${{ vars.environment }} & run By ${{ vars.team }}"
   My_Second_Job:
     name: My Second Job 
