@@ -9,8 +9,8 @@ on:
       - devlop
 jobs: 
   My_First_Job:
-  env:
-    environment: dev
+    env:
+      environment: dev
     name: My First Job
     runs-on: ubuntu-latest
     steps:
