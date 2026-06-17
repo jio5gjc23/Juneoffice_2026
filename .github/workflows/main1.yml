@@ -1,5 +1,7 @@
 name: My First Workflow
 run-name: Workflow run by ${{ github.actor }} & Workflow number is ${{ github.run_number}}
+env:
+  app_name: myapp
 on: 
   push: 
     branches:
@@ -7,15 +9,21 @@ on:
       - devlop
 jobs: 
   My_First_Job:
+  env:
+    environment: dev
     name: My First Job
     runs-on: ubuntu-latest
     steps:
       - name: My First step
-        run: echo "My First Job Run Successful"
-  My_Second_Job:
-    name: My Second Job 
-    runs-on: ubuntu-latest
-    needs: My_First_Job
-    steps:
-      - name: My Second Job
-        run: echo "My Second Job Run Successful"
+        env: 
+          team: devops
+        run: |
+          echo "My First Job Run Successful"
+          echo "My application name is $app_name run in $environment & run By $team"
+  # My_Second_Job:
+  #   name: My Second Job 
+  #   runs-on: ubuntu-latest
+  #   needs: My_First_Job
+  #   steps:
+  #     - name: My Second Job
+  #       run: echo "My Second Job Run Successful"
